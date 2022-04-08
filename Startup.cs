@@ -1,4 +1,5 @@
 using BookLibraryApi.data;
+using BookLibraryApi.data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,8 @@ namespace BookLibraryApi
             services.AddControllers();
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+            services.AddTransient<BookServices>();
 
             services.AddSwaggerGen(c =>
             {
