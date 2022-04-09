@@ -14,5 +14,6 @@ namespace BookLibraryApi.data
 
         }
         public DbSet<Book> Books { set; get; }
+        public DbSet<Student> Students { set; get; }
     }
 }
